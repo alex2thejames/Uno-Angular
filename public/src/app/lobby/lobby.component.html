@@ -1,0 +1,96 @@
+<style>
+    body {
+        background-image: url("static/imgs/back.jpg");
+        background-size: cover;
+        color: rgb(201, 201, 201);
+    }
+    .card-action {
+        height: 100px;
+    }
+    .card {
+        height: 100px;
+        margin-top: 120px;
+    }
+    table {
+        background: rgba(91, 91, 91, 0.95);
+    }
+    h1 {
+        letter-spacing: 1px;
+        line-height: 0px;
+        margin-top: 33px;
+        font-weight: 600;
+        color: rgb(227, 227, 227);
+    }
+    td {
+        font-size: 30px;
+    }
+    .logout {
+        height: 35px;
+        width: 100px;
+        line-height: 32px;
+        font-weight: 500;
+        margin-top: -225px;
+        margin-right: 50px;
+        font-size: 20px;
+        color: rgb(255, 0, 0);
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 30px;
+    }
+    .logout:hover {
+        background: rgb(0, 0, 0);
+    }
+    .valign-wrapper {
+        margin-top: -90px;
+        margin-left: 1350px;
+    }
+</style>
+
+<div class="row">
+    <div class="col s12 l8 offset-l2">
+        <div class="card white center-align">
+            <div class="card-action red lighten-1 white-text">
+                <h1>Lobby</h1>
+            </div>
+            <table class="centered highlight responsive-table">
+                <!-- <tbody>
+                    {% for i in users %}
+                        {% if i.waiting_for_game == True %}
+                        <tr>
+                            <td>{{i.first_name}}</td>
+                            <td><a href="/game_process/{{i.id}}">Join</a></td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                    {% if noneq == True %}
+                    <tr>
+                        <td>No Games To Join</td>
+                    </tr>
+                    {% endif %}
+                </tbody> -->
+                <tbody>
+                    <tr>
+                        <td>Game1</td>
+                        <td><a [routerLink]="['/game']">Join</a></td>
+                    </tr>
+                    <tr>
+                        <td>Game2</td>
+                        <td><a [routerLink]="['/game']">Join</a></td>
+                    </tr>
+                    <tr>
+                        <td>Game3</td>
+                        <td><a [routerLink]="['/game']">Join</a></td>
+                    </tr>
+                    <tr>
+                        <td>Game4</td>
+                        <td><a [routerLink]="['/game']">Join</a></td>
+                    </tr>
+                    <tr>
+                        <td>Game5</td>
+                        <td><a [routerLink]="['/game']">Join</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<a class="logout right center-align" (click)="logout" [routerLink]="['/login']">Log Out</a>

@@ -1,0 +1,157 @@
+<style>
+    .card {
+        margin-top: 200px;
+    }
+
+    .card {
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .login label {
+        font-size: 16px;
+        color: #ccc;
+    }
+
+    .login input {
+        font-size: 22px;
+        color: #fff;
+    }
+
+    #buttonLogin:hover {
+        padding: 0px 50px;
+    }
+
+    #buttonLogin {
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: lightskyblue;
+        font-size: 20px;
+    }
+
+    .center {
+        margin-bottom: -20px;
+    }
+    ul {
+        margin-bottom: -31px;
+        background: red;
+        color: white;
+        font-weight: 500;
+        font-size: 30px;
+    }
+</style>
+<!-- <div *ngIf="errors">
+    <div *ngIf="errors.name">
+      {{ errors.name.message }}
+    </div>
+    <div *ngIf="errors.type">
+      {{ errors.type.message }}
+    </div>
+    <div *ngIf="errors.description">
+      {{ errors.description.message }}
+    </div>
+  </div> -->
+<div *ngIf="login == true" class="row login">
+    <div class="col s12 l4 offset-l4">
+        <div class="card">
+            <div class="card-action red lighten-1 white-text">
+                <h3>Login</h3>
+            </div>
+            <form action="login/process" method="POST">
+                <div class="card-content">
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <input type="text" name="email" placeholder="Email" [(ngModel)]="loginUser.email" required />
+                    </div>
+                    <br />
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" name="password" [(ngModel)]="loginUser.password" placeholder="Password" required />
+                    </div>
+                    <br />
+                    <div class="center form-field center-align">
+                        <button id="buttonLogin" class="btn-large red">Login</button><br />
+                        <button id="createAccount" (click)="CreateAccountFormShow()">Create Account</button>
+                    </div>
+                    <br />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <style>
+    body {
+        background-image: url('static/imgs/back.jpg');
+        background-size: cover;
+        color: #fff;
+    }
+
+    .card {
+        margin-top: 120px;
+    }
+
+    .card {
+        background: rgba(0, 0, 0, .6)
+    }
+
+    .login label {
+        font-size: 16px;
+        color: #ccc;
+    }
+
+    .login input {
+        font-size: 22px;
+        color: #fff;
+    }
+
+    .login button:hover {
+        padding: 0px 50px;
+    }
+    ul{
+        margin-bottom: -31px;
+        background: red;
+        color: white;
+        font-weight: 500;
+        font-size: 30px;
+    }
+</style> -->
+<div *ngIf="login == false" class="row login">
+    <div class="col s12 l4 offset-l4">
+        <div class="card">
+            <div class="card-action red lighten-1 white-text">
+                <h3>Register</h3>
+            </div>
+            <form action="register/process" method="POST">
+                <div class="card-content">
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text" name="r_first_name" placeholder="First Name" [(ngModel)]="user.r_first_name" #r_first_name="ngModel" minlength="3"
+                        maxlength="24" required />
+                        <p *ngIf="!name.valid && !name.pristine" style="color: red"> Name must be 3 characters long</p>
+                    </div><br>
+                    <div class="input-field">
+                        <i class="material-icons prefix">person</i>
+                        <input type="text" name="r_last_name" placeholder="Last Name" required>
+                    </div><br>
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <input type="text" name="r_email" placeholder="Email" required>
+                    </div><br>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" name="r_password" placeholder="Password" required>
+                    </div><br>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" name="r_cpassword" placeholder="Confirm Password" required>
+                    </div><br>
+                    <div class="center form-field center-align">
+                        <button class="btn-large red">Register</button><br>
+                    </div><br>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
